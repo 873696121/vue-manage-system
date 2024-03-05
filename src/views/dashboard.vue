@@ -174,22 +174,26 @@ const options = {
 const options2 = {
 	type: 'line',
 	title: {
-		text: '最近几个月各品类销售趋势图'
+		text: '最近5分钟各服务QPS'
 	},
-	labels: ['6月', '7月', '8月', '9月', '10月'],
+	labels: ['11:23:49', '11:24:49', '11:25:49', '11:26:49', '11:27:49'],
 	datasets: [
 		{
-			label: '家电',
+			label: 'goods',
 			data: [234, 278, 270, 190, 230]
 		},
 		{
-			label: '百货',
+			label: 'trade',
 			data: [164, 178, 150, 135, 160]
 		},
 		{
-			label: '食品',
+			label: 'fulfilment',
 			data: [74, 118, 200, 235, 90]
-		}
+		},
+    {
+      label: 'settlement',
+      data: [174, 218, 300, 335, 190]
+    }
 	]
 };
 const todoList = reactive([
@@ -321,6 +325,6 @@ const todoList = reactive([
 
 .schart {
 	width: 100%;
-	height: 300px;
+	height: 563px;
 }
 </style>
