@@ -27,10 +27,37 @@ const routes: RouteRecordRaw[] = [
                 path: '/table',
                 name: 'basetable',
                 meta: {
-                    title: '表格',
+                    title: '服务管理',
                     permiss: '2',
                 },
                 component: () => import(/* webpackChunkName: "table" */ '../views/table.vue'),
+            },
+            {
+                path: '/table2',
+                name: 'basetable1',
+                meta: {
+                    title: '服务部署',
+                    permiss: '3',
+                },
+                component: () => import(/* webpackChunkName: "table" */ '../views/table2.vue'),
+            },
+            {
+                path: '/table3',
+                name: 'basetable3',
+                meta: {
+                    title: "节点管理",
+                    permiss: '3',
+                },
+                component: () => import(/* webpackChunkName: "table" */ '../views/table3.vue'),
+            },
+            {
+                path: '/table4',
+                name: 'basetable4',
+                meta: {
+                    title: "策略管理",
+                    permiss: '3',
+                },
+                component: () => import(/* webpackChunkName: "table" */ '../views/table4.vue'),
             },
             {
                 path: '/charts',
@@ -40,33 +67,6 @@ const routes: RouteRecordRaw[] = [
                     permiss: '11',
                 },
                 component: () => import(/* webpackChunkName: "charts" */ '../views/charts.vue'),
-            },
-            {
-                path: '/form',
-                name: 'baseform',
-                meta: {
-                    title: '表单',
-                    permiss: '5',
-                },
-                component: () => import(/* webpackChunkName: "form" */ '../views/form.vue'),
-            },
-            {
-                path: '/tabs',
-                name: 'tabs',
-                meta: {
-                    title: 'tab标签',
-                    permiss: '3',
-                },
-                component: () => import(/* webpackChunkName: "tabs" */ '../views/tabs.vue'),
-            },
-            {
-                path: '/donate',
-                name: 'donate',
-                meta: {
-                    title: '鼓励作者',
-                    permiss: '14',
-                },
-                component: () => import(/* webpackChunkName: "donate" */ '../views/donate.vue'),
             },
             {
                 path: '/permission',

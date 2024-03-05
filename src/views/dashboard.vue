@@ -2,7 +2,9 @@
 	<div>
 		<el-row :gutter="20">
 			<el-col :span="8">
-				<el-card shadow="hover" class="mgb20" style="height: 252px">
+
+
+				<el-card shadow="hover" class="mgb20" style="height: 352px">
 					<div class="user-info">
 						<el-avatar :size="120" :src="imgurl" />
 						<div class="user-info-cont">
@@ -10,107 +12,129 @@
 							<div>{{ role }}</div>
 						</div>
 					</div>
+
 					<div class="user-info-list">
 						上次登录时间：
-						<span>2022-10-01</span>
+						<span>2024-02-06</span>
 					</div>
 					<div class="user-info-list">
 						上次登录地点：
-						<span>东莞</span>
+						<span>南京</span>
 					</div>
 				</el-card>
-				<el-card shadow="hover" style="height: 252px">
+
+				<el-card shadow="hover" style="height: 372px">
 					<template #header>
 						<div class="clearfix">
-							<span>语言详情</span>
+							<span>当前部署</span>
 						</div>
 					</template>
-					Vue
+					fulfilment_004
 					<el-progress :percentage="79.4" color="#42b983"></el-progress>
-					TypeScript
-					<el-progress :percentage="14" color="#f1e05a"></el-progress>
-					CSS
-					<el-progress :percentage="5.6"></el-progress>
-					HTML
-					<el-progress :percentage="1" color="#f56c6c"></el-progress>
+					trade_011
+					<el-progress :percentage="34" color="#f1e05a"></el-progress>
+					settlement_008
+					<el-progress :percentage="15.6"></el-progress>
+					goods_021
+					<el-progress :percentage="13" color="#f56c6c"></el-progress>
 				</el-card>
 			</el-col>
+
+
 			<el-col :span="16">
 				<el-row :gutter="20" class="mgb20">
+
+
 					<el-col :span="8">
-						<el-card shadow="hover" :body-style="{ padding: '0px' }">
+						<el-card shadow="hover" :body-style="{ padding: '10px' }">
 							<div class="grid-content grid-con-1">
-								<el-icon class="grid-con-icon"><User /></el-icon>
+								<el-icon class="grid-con-icon"><Cpu /></el-icon>
 								<div class="grid-cont-right">
-									<div class="grid-num">1234</div>
-									<div>用户访问量</div>
+									<div class="grid-num">4</div>
+									<div>微服务数量</div>
 								</div>
 							</div>
 						</el-card>
 					</el-col>
+
+
 					<el-col :span="8">
-						<el-card shadow="hover" :body-style="{ padding: '0px' }">
+						<el-card shadow="hover" :body-style="{ padding: '10px' }">
 							<div class="grid-content grid-con-2">
-								<el-icon class="grid-con-icon"><ChatDotRound /></el-icon>
+								<el-icon class="grid-con-icon"><Cpu /></el-icon>
 								<div class="grid-cont-right">
-									<div class="grid-num">321</div>
-									<div>系统消息</div>
+									<div class="grid-num">52</div>
+									<div>节点数量</div>
 								</div>
 							</div>
 						</el-card>
 					</el-col>
 					<el-col :span="8">
-						<el-card shadow="hover" :body-style="{ padding: '0px' }">
+						<el-card shadow="hover" :body-style="{ padding: '10px' }">
 							<div class="grid-content grid-con-3">
-								<el-icon class="grid-con-icon"><Goods /></el-icon>
+								<el-icon class="grid-con-icon"><List /></el-icon>
 								<div class="grid-cont-right">
-									<div class="grid-num">5000</div>
-									<div>商品数量</div>
+									<div class="grid-num">6</div>
+									<div>策略数量</div>
 								</div>
 							</div>
 						</el-card>
 					</el-col>
 				</el-row>
-				<el-card shadow="hover" style="height: 403px">
-					<template #header>
-						<div class="clearfix">
-							<span>待办事项</span>
-							<el-button style="float: right; padding: 3px 0" text>添加</el-button>
-						</div>
-					</template>
 
-					<el-table :show-header="false" :data="todoList" style="width: 100%">
-						<el-table-column width="40">
-							<template #default="scope">
-								<el-checkbox v-model="scope.row.status"></el-checkbox>
-							</template>
-						</el-table-column>
-						<el-table-column>
-							<template #default="scope">
-								<div
-									class="todo-item"
-									:class="{
-										'todo-item-del': scope.row.status
-									}"
-								>
-									{{ scope.row.title }}
-								</div>
-							</template>
-						</el-table-column>
-					</el-table>
-				</el-card>
+
+<!--        <el-col :span="12">-->
+<!--          <el-card shadow="hover">-->
+<!--            <schart ref="bar" class="schart" canvasId="bar" :options="options"></schart>-->
+<!--          </el-card>-->
+<!--        </el-col>-->
+
+        <el-card shadow="hover">
+          <schart ref="line" class="schart" canvasId="line" :options="options2"></schart>
+        </el-card>
+
+<!--				<el-card shadow="hover" style="height: 603px">-->
+<!--					<template #header>-->
+<!--						<div class="clearfix">-->
+<!--							<span>待运行任务</span>-->
+<!--							<el-button style="float: right; padding: 3px 0" text>添加</el-button>-->
+<!--						</div>-->
+<!--					</template>-->
+
+<!--					<el-table :show-header="false" :data="todoList" style="width: 100%">-->
+<!--						<el-table-column width="40">-->
+<!--							<template #default="scope">-->
+<!--								<el-checkbox v-model="scope.row.status"></el-checkbox>-->
+<!--							</template>-->
+<!--						</el-table-column>-->
+<!--						<el-table-column>-->
+<!--							<template #default="scope">-->
+<!--								<div-->
+<!--									class="todo-item"-->
+<!--									:class="{-->
+<!--										'todo-item-del': scope.row.status-->
+<!--									}"-->
+<!--								>-->
+<!--									{{ scope.row.title }}-->
+<!--								</div>-->
+<!--							</template>-->
+<!--						</el-table-column>-->
+<!--					</el-table>-->
+<!--				</el-card>-->
+
+
 			</el-col>
 		</el-row>
 		<el-row :gutter="20">
+<!--			<el-col :span="12">-->
+<!--				<el-card shadow="hover">-->
+<!--					<schart ref="bar" class="schart" canvasId="bar" :options="options"></schart>-->
+<!--				</el-card>-->
+<!--			</el-col>-->
 			<el-col :span="12">
-				<el-card shadow="hover">
-					<schart ref="bar" class="schart" canvasId="bar" :options="options"></schart>
-				</el-card>
-			</el-col>
-			<el-col :span="12">
-				<el-card shadow="hover">
-					<schart ref="line" class="schart" canvasId="line" :options="options2"></schart>
-				</el-card>
+<!--				<el-card shadow="hover">-->
+<!--					<schart ref="line" class="schart" canvasId="line" :options="options2"></schart>-->
+<!--				</el-card>-->
 			</el-col>
 		</el-row>
 	</div>
@@ -120,6 +144,7 @@
 import Schart from 'vue-schart';
 import { reactive } from 'vue';
 import imgurl from '../assets/img/img.jpg';
+import {Search} from "@element-plus/icons-vue";
 
 const name = localStorage.getItem('ms_username');
 const role: string = name === 'admin' ? '超级管理员' : '普通用户';

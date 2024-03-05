@@ -88,61 +88,26 @@ const items = [
   {
     icon: 'DocumentCopy',
     index: '/table',
-    title: '微服务管理',
+    title: '服务管理',
     permiss: '3',
   },
   {
     icon: 'DocumentCopy',
-    index: '/tabs',
-    title: 'tab选项卡',
+    index: '/table2',
+    title: '服务部署',
     permiss: '3',
   },
   {
-    icon: 'Edit',
-    index: '3',
-    title: '表单相关',
-    permiss: '4',
-    subs: [
-      {
-        index: '/form',
-        title: '基本表单',
-        permiss: '5',
-      },
-      {
-        index: '/upload',
-        title: '文件上传',
-        permiss: '6',
-      },
-      {
-        index: '4',
-        title: '三级菜单',
-        permiss: '7',
-        subs: [
-          {
-            index: '/editor',
-            title: '富文本编辑器',
-            permiss: '8',
-          },
-          {
-            index: '/markdown',
-            title: 'markdown编辑器',
-            permiss: '9',
-          },
-        ],
-      },
-    ],
+    icon: 'DocumentCopy',
+    index: '/table3',
+    title: '节点管理',
+    permiss: '3',
   },
   {
-    icon: 'Setting',
-    index: '/icon',
-    title: '自定义图标',
-    permiss: '10',
-  },
-  {
-    icon: 'PieChart',
-    index: '/charts',
-    title: 'schart图表',
-    permiss: '11',
+    icon: 'DocumentCopy',
+    index: '/table4',
+    title: '策略管理',
+    permiss: '3',
   },
   {
     icon: 'Warning',
