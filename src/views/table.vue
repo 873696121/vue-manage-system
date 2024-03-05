@@ -2,30 +2,18 @@
 	<div>
 		<div class="container">
 			<div class="search-box">
-				<el-input v-model="query.name" placeholder="用户名" class="search-input mr10" clearable></el-input>
+				<el-input v-model="query.name" placeholder="微服务" class="search-input mr10" clearable></el-input>
 				<el-button type="primary" :icon="Search" @click="handleSearch">搜索</el-button>
 				<el-button type="warning" :icon="CirclePlusFilled" @click="visible = true">新增</el-button>
 			</div>
 			<el-table :data="tableData" border class="table" ref="multipleTable" header-cell-class-name="table-header">
 				<el-table-column prop="id" label="ID" width="55" align="center"></el-table-column>
-				<el-table-column prop="name" label="用户名" align="center"></el-table-column>
-				<el-table-column label="账户余额" align="center">
-					<template #default="scope">￥{{ scope.row.money }}</template>
-				</el-table-column>
-				<el-table-column label="头像(查看大图)" align="center">
-					<template #default="scope">
-						<el-image
-							class="table-td-thumb"
-							:src="scope.row.thumb"
-							:z-index="10"
-							:preview-src-list="[scope.row.thumb]"
-							preview-teleported
-						>
-						</el-image>
-					</template>
-				</el-table-column>
-				<el-table-column prop="address" label="地址" align="center"></el-table-column>
-				<el-table-column label="账户状态" align="center">
+				<el-table-column prop="name" label="微服务名称" align="center"></el-table-column>
+				<el-table-column prop="address" label="标签" align="center"></el-table-column>
+				<el-table-column prop="address" label="服务类型" align="center"></el-table-column>
+				<el-table-column prop="address" label="注册时间" align="center"></el-table-column>
+				<el-table-column prop="address" label="更新时间" align="center"></el-table-column>
+				<el-table-column label="服务状态" align="center">
 					<template #default="scope">
 						<el-tag :type="scope.row.state ? 'success' : 'danger'">
 							{{ scope.row.state ? '正常' : '异常' }}
@@ -33,12 +21,22 @@
 					</template>
 				</el-table-column>
 
-				<el-table-column prop="date" label="注册时间" align="center"></el-table-column>
 				<el-table-column label="操作" width="280" align="center">
 					<template #default="scope">
 						<el-button type="warning" size="small" :icon="View" @click="handleView(scope.row)">
 							查看
 						</el-button>
+
+            <el-button
+                type="danger"
+                size="small"
+                :icon="Edit"
+                @click="handleEdit(scope.$index, scope.row)"
+                v-permiss="15"
+            >
+              删除
+            </el-button>
+
 						<el-button
 							type="primary"
 							size="small"
@@ -47,15 +45,6 @@
 							v-permiss="15"
 						>
 							编辑
-						</el-button>
-						<el-button
-							type="danger"
-							size="small"
-							:icon="Delete"
-							@click="handleDelete(scope.$index)"
-							v-permiss="16"
-						>
-							删除
 						</el-button>
 					</template>
 				</el-table-column>
@@ -115,9 +104,18 @@ const tableData = ref<TableItem[]>([]);
 const pageTotal = ref(0);
 // 获取表格数据
 const getData = async () => {
-	const res = await fetchData();
-	tableData.value = res.data.list;
-	pageTotal.value = res.data.pageTotal || 50;
+	tableData.value = [
+    {
+      id: 1,
+      name: "string",
+      thumb: "string",
+      money: 1,
+      state: "string",
+      date: "string",
+      address: "string",
+    }
+  ];
+	pageTotal.value = 1;
 };
 getData();
 
